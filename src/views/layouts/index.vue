@@ -63,17 +63,17 @@
             <img class="right-arrow" src="@/assets/images/menu/right-arrow.png" alt="">
           </div>
           <div class="item item2">
-            <img class="icon" src="@/assets/images/menu/game.png" alt="">
+            <img class="icon" src="@/assets/images/menu/shaizi.png" alt="">
             More Played
             <img class="right-arrow" src="@/assets/images/menu/right-arrow.png" alt="">
           </div>
           <div class="item item3">
-            <img class="icon" src="@/assets/images/menu/game.png" alt="">
+            <img class="icon" src="@/assets/images/menu/huangguan.png" alt="">
             Rated Games
             <img class="right-arrow" src="@/assets/images/menu/right-arrow.png" alt="">
           </div>
           <div class="item item4">
-            <img class="icon" src="@/assets/images/menu/game.png" alt="">
+            <img class="icon" src="@/assets/images/menu/xq.png" alt="">
             Top Games
             <img class="right-arrow" src="@/assets/images/menu/right-arrow.png" alt="">
           </div>
