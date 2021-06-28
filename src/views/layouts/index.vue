@@ -84,32 +84,32 @@
             </div>
           </div>
           <div class="item item5">
-            <img class="icon" src="@/assets/images/menu/game.png" alt="">
+            <img class="icon" src="@/assets/images/menu/tag.png" alt="">
             All Tags
             <img class="right-arrow" src="@/assets/images/menu/right-arrow.png" alt="">
           </div>
           <div class="item item6">
-            <img class="icon" src="@/assets/images/menu/game.png" alt="">
+            <img class="icon" src="@/assets/images/menu/prize.png" alt="">
             Kiz10
             <img class="right-arrow" src="@/assets/images/menu/right-arrow.png" alt="">
           </div>
           <div class="item item7">
-            <img class="icon" src="@/assets/images/menu/game.png" alt="">
+            <img class="icon" src="@/assets/images/menu/love.png" alt="">
             Kiz10 Girls
             <img class="right-arrow" src="@/assets/images/menu/right-arrow.png" alt="">
           </div>
           <div class="item item8">
-            <img class="icon" src="@/assets/images/menu/game.png" alt="">
+            <img class="icon" src="@/assets/images/menu/luyin.png" alt="">
             Taptapking
             <img class="right-arrow" src="@/assets/images/menu/right-arrow.png" alt="">
           </div>
           <div class="item item9">
-            <img class="icon" src="@/assets/images/menu/game.png" alt="">
+            <img class="icon" src="@/assets/images/menu/rock.png" alt="">
             Fun10Games
             <img class="right-arrow" src="@/assets/images/menu/right-arrow.png" alt="">
           </div>
           <div class="item item10">
-            <img class="icon" src="@/assets/images/menu/game.png" alt="">
+            <img class="icon" src="@/assets/images/menu/download.png" alt="">
             Games for your site
             <img class="right-arrow" src="@/assets/images/menu/right-arrow.png" alt="">
           </div>
