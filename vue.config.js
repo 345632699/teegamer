@@ -54,7 +54,7 @@ module.exports = {
     proxy: {
       //配置跨域
       '/api': {
-          target: "http://gameapi.seven1029.com",
+          target: "https://api.teegamer.com",
           // ws:true,
           changOrigin:true,
           pathRewrite:{

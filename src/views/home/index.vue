@@ -36,6 +36,7 @@ import data from '../../assets/game.json'
 import { getGameList } from '@/api/game.js'
 
 export default {
+  inject: ['reload'],
   components: { WhiteBtn, OrangeBtn, CatTitle },
   data() {
     return {
@@ -102,10 +103,6 @@ export default {
           if (data.code === 10000) {
             data.result.splice(9, 1)
             cat.ganeList = data.result
-          } else {
-            this.catList.forEach((cat) => {
-              cat.ganeList = this.makeRandomArr(this.data, 9)
-            })
           }
         })
         .catch(() => {
@@ -131,7 +128,13 @@ export default {
         newArrList.push(arr)
       }
       return newArrList
-    }
+    },
+    refresh(id) {
+      if (id > 0) {
+        this.$route.params.id = id
+      }
+      this.reload()
+    },
 
   }
 }
@@ -142,7 +145,7 @@ export default {
       padding-top: 40.5px;
       height: 535px;
       width: 100%;
-      background: black;
+      background: #1D1C20;
 
       .logo {
         margin: auto;

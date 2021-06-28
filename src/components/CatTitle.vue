@@ -13,7 +13,7 @@
           <img :src="game.img" alt="" :name="game.name">
         </div>
       </a>
-      <router-link :to="{name:'Detail',params: {id: game.Id, titleName: titleName}}" v-for="game in gameList" v-if="!onFresh">
+      <router-link :to="{name:'Detail',params: {id: game.id, titleName: titleName}}" v-for="game in gameList" v-if="!onFresh">
         <div class="game">
           <img :src="game.img" alt="" :name="game.name">
         </div>
@@ -22,6 +22,7 @@
         no result
       </div>
     </div>
+    <div class="jiange"></div>
 <!--    <div class="banner-small-container" v-if="gameList.length > 0">-->
 <!--      <img src="@/assets/images/banner1.png" alt="">-->
 <!--    </div>-->
@@ -155,7 +156,7 @@ export default {
     /*display: flex;*/
     /*justify-content: space-between;*/
     /*flex-wrap: wrap;*/
-    margin: 5px 5px;
+    margin: 5px 5px 40px 5px;
 
     .game {
       display: inline-block;
@@ -165,8 +166,13 @@ export default {
         width: 109px;
         height: 109px;
         border-radius: 20px;
+        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.79);
       }
     }
+  }
+  .jiange{
+    height: 40px;
+    background: #1D1C1F;
   }
 
   .banner-small-container {

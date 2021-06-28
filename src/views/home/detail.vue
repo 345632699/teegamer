@@ -165,6 +165,7 @@ export default {
       this.reload()
     },
     getDetail() {
+      console.log(this.$route.params.id)
       getGameDetail({
         gameId: this.$route.params.id
       }).then((data) => {
