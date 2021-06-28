@@ -2,10 +2,10 @@
   <div class="app-container">
     <div class="layout-header">
       <div class="demo-nav">
-        <div class="demo-nav__title">
+        <div class="demo-nav__title" @click="jumpUrl('Home')">
           <img src="@/assets/images/logo.png" alt="">
         </div>
-        <div class="demo-nav__back" @click="jumpUrl('Home')">
+        <div class="demo-nav__back">
           <van-icon name="wap-nav" color="#fff" size="0.8rem"/>
         </div>
         <div class="search">

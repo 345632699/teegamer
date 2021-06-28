@@ -8,13 +8,12 @@
       </div>
     </div>
     <div class="game-list">
-      <a @click="goUrl(game.Id)" v-for="game in gameList" v-if="onFresh">
+      <a @click="goUrl(game.id)" v-for="game in gameList" v-if="onFresh">
         <div class="game">
           <img :src="game.img" alt="" :name="game.name">
         </div>
       </a>
-      <router-link :to="{name:'Detail',params: {id: game.Id, titleName: titleName}}" v-for="game in gameList"
-                   v-if="!onFresh">
+      <router-link :to="{name:'Detail',params: {id: game.Id, titleName: titleName}}" v-for="game in gameList" v-if="!onFresh">
         <div class="game">
           <img :src="game.img" alt="" :name="game.name">
         </div>
@@ -23,82 +22,81 @@
         no result
       </div>
     </div>
-    <div class="banner-small-container" v-if="gameList.length > 0">
-      <img src="@/assets/images/banner1.png" alt="">
-    </div>
+<!--    <div class="banner-small-container" v-if="gameList.length > 0">-->
+<!--      <img src="@/assets/images/banner1.png" alt="">-->
+<!--    </div>-->
   </div>
-
 
 </template>
 
 <script>
-  export default {
-    inject: ['reload'],
-    name: 'CatTitle',
-    props: {
-      titleName: {
-        type: String,
-        default: 'Most Wanted'
-      },
-      onFresh: {
-        type: Boolean,
-        default: false
-      },
-      gameList: {
-        type: Array,
-        default: () => {
-          return [
-            {
-              id: 1,
-              name: '111',
-              url: 'detail',
-              img: require('@/assets/images/desc.png')
-            },
-            {
-              id: 2,
-              name: '2222',
-              url: 'www.baidu.com',
-              img: require('@/assets/images/desc.png')
-            },
-            {
-              id: 3,
-              name: '2222',
-              url: 'www.baidu.com',
-              img: require('@/assets/images/desc.png')
-            },
-            {
-              id: 1,
-              name: '111',
-              url: 'www.baidu.com',
-              img: require('@/assets/images/desc.png')
-            },
-            {
-              id: 2,
-              name: '2222',
-              url: 'www.baidu.com',
-              img: require('@/assets/images/desc.png')
-            },
-            {
-              id: 3,
-              name: '2222',
-              url: 'www.baidu.com',
-              img: require('@/assets/images/desc.png')
-            }
-          ]
-        }
-      }
+export default {
+  inject: ['reload'],
+  name: 'CatTitle',
+  props: {
+    titleName: {
+      type: String,
+      default: 'Suggested Games'
     },
-    data() {
-      return {}
+    onFresh: {
+      type: Boolean,
+      default: false
     },
-    mounted() {
-    },
-    methods: {
-      goUrl(id) {
-        this.$parent.refresh(id)
+    gameList: {
+      type: Array,
+      default: () => {
+        return [
+          {
+            id: 1,
+            name: '111',
+            url: 'detail',
+            img: require('@/assets/images/desc.png')
+          },
+          {
+            id: 2,
+            name: '2222',
+            url: 'www.baidu.com',
+            img: require('@/assets/images/desc.png')
+          },
+          {
+            id: 3,
+            name: '2222',
+            url: 'www.baidu.com',
+            img: require('@/assets/images/desc.png')
+          },
+          {
+            id: 1,
+            name: '111',
+            url: 'www.baidu.com',
+            img: require('@/assets/images/desc.png')
+          },
+          {
+            id: 2,
+            name: '2222',
+            url: 'www.baidu.com',
+            img: require('@/assets/images/desc.png')
+          },
+          {
+            id: 3,
+            name: '2222',
+            url: 'www.baidu.com',
+            img: require('@/assets/images/desc.png')
+          }
+        ]
       }
     }
+  },
+  data() {
+    return {}
+  },
+  mounted() {
+  },
+  methods: {
+    goUrl(id) {
+      this.$parent.refresh(id)
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>

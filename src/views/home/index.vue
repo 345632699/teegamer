@@ -22,84 +22,83 @@
       </div>
       <div class="btn-list">
         <orange-btn></orange-btn>
-        <white-btn></white-btn>
+<!--        <white-btn></white-btn>-->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import CatTitle from '../../components/CatTitle'
-  import OrangeBtn from '../../components/OrangeBtn'
-  import WhiteBtn from '../../components/WhiteBtn'
-  import data from '../../assets/game.json'
-  import { getGameList } from '@/api/game.js'
+import CatTitle from '../../components/CatTitle'
+import OrangeBtn from '../../components/OrangeBtn'
+import WhiteBtn from '../../components/WhiteBtn'
+import data from '../../assets/game.json'
+import { getGameList } from '@/api/game.js'
 
-  export default {
-    components: { WhiteBtn, OrangeBtn, CatTitle },
-    data() {
-      return {
-        data: data,
-        catList: [
-          {
-            'title': 'New Game',
-            ganeList: []
-          },
-          {
-            'title': 'Top Games',
-            ganeList: []
-          },
-          {
-            'title': 'Action Games',
-            ganeList: []
-          },
-          {
-            title: 'Puzzle Games',
-            ganeList: []
-          },
-          {
-            title: 'Adventure Games',
-            ganeList: []
-          },
-          {
-            title: 'Skill Games',
-            ganeList: []
-          },
-          {
-            title: 'Puzzle Games',
-            ganeList: []
-          },
-          {
-            title: 'Sports Games',
-            ganeList: []
-          },
-          {
-            title: 'Strategy Games',
-            ganeList: []
-          },
-          {
-            title: 'Girls Games',
-            ganeList: []
-          }
-        ]
-      }
-    },
-
-    computed: {},
-
-    mounted() {
-      let i = 1
-      this.catList.forEach((cat) => {
-        let strings = cat.title.split(" ")
-        console.log(strings)
-        let params = {
-          Page: i,
-          PageSize: 100
-          // categories: strings[0]
+export default {
+  components: { WhiteBtn, OrangeBtn, CatTitle },
+  data() {
+    return {
+      data: data,
+      catList: [
+        {
+          'title': 'New Game',
+          ganeList: []
+        },
+        {
+          'title': 'Top Games',
+          ganeList: []
+        },
+        {
+          'title': 'Action Games',
+          ganeList: []
+        },
+        {
+          title: 'Puzzle Games',
+          ganeList: []
+        },
+        {
+          title: 'Adventure Games',
+          ganeList: []
+        },
+        {
+          title: 'Skill Games',
+          ganeList: []
+        },
+        {
+          title: 'Puzzle Games',
+          ganeList: []
+        },
+        {
+          title: 'Sports Games',
+          ganeList: []
+        },
+        {
+          title: 'Strategy Games',
+          ganeList: []
+        },
+        {
+          title: 'Girls Games',
+          ganeList: []
         }
-        getGameList(params)
-        .then((data) => {
+      ]
+    }
+  },
 
+  computed: {},
+
+  mounted() {
+    let i = 1
+    this.catList.forEach((cat) => {
+      const strings = cat.title.split(' ')
+      console.log(strings)
+      const params = {
+        Page: i,
+        PageSize: 100
+        // categories: strings[0]
+      }
+      getGameList(params)
+        .then((data) => {
           if (data.code === 10000) {
             data.result.splice(9, 1)
             cat.ganeList = data.result
@@ -114,28 +113,28 @@
             cat.ganeList = this.makeRandomArr(this.data, 9)
           })
         })
-        i++
-      })
-    },
+      i++
+    })
+  },
 
-    methods: {
-      makeRandomArr(arrList, num) {
-        if (num > arrList.length) {
-          return
-        }
-        var tempArr = arrList.slice(0)
-        var newArrList = []
-        for (var i = 0; i < num; i++) {
-          var random = Math.floor(Math.random() * (tempArr.length - 1))
-          var arr = tempArr[random]
-          tempArr.splice(random, 1)
-          newArrList.push(arr)
-        }
-        return newArrList
+  methods: {
+    makeRandomArr(arrList, num) {
+      if (num > arrList.length) {
+        return
       }
-
+      var tempArr = arrList.slice(0)
+      var newArrList = []
+      for (var i = 0; i < num; i++) {
+        var random = Math.floor(Math.random() * (tempArr.length - 1))
+        var arr = tempArr[random]
+        tempArr.splice(random, 1)
+        newArrList.push(arr)
+      }
+      return newArrList
     }
+
   }
+}
 </script>
 <style lang="scss" scoped>
   .index-container {
